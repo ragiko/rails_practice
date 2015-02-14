@@ -24,10 +24,15 @@ class Book < ActiveRecord::Base
       "lovely #{matched}"
     end
   end
+
+  def high_price?
+    price >= 5000
+  end
   
   # オブジェクトを削除した後に呼ばれる
   # log/development.logを見る
-  after_destroy do |book|
-    Rails.logger.info "Book is deleted: #{book.attributes.inspect}"
+  after_destroy :if => :high_price? do |book|
+    Rails.logger.warn "Book is deleted: #{book.attributes.inspect}"
+    Rails.logger.warn "Please check"
   end
 end
