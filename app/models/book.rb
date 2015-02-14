@@ -11,4 +11,10 @@ class Book < ActiveRecord::Base
   validates :name, presence: true
   validates :name, length: { maximum: 15 } 
   validates :price, numericality: { greater_than_or_equal_to: 0 }
+  validate do |book|
+    # エクササイズ嫌い validate
+    if book.name.include?("exercise")
+      book.errors[:name] << "I don't like exercise"
+    end
+  end
 end
