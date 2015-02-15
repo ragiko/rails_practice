@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       format.html { render layout: "awesome_book" }
       format.csv
       format.xml { render xml: @book }
-      # format.json
+      format.json
     end
   end
   
