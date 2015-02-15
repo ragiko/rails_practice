@@ -1,0 +1,20 @@
+<!-- これを以下でslimで書く -->
+<!-- <div id="contents"> -->
+<!-- <h1>Sample File</h1> -->
+<!--  <img alt="yterajima" src="http://www.e2esound.com/images/yterajima.jpg" /> -->
+<!--  <p>テキストテキストテキスト</p> -->
+<!--  <p>テキストテキストテキスト -->
+<!--    テキストテキストテキスト</p> -->
+<!-- </div> -->
+
+/ http://qiita.com/yterajima/items/53fd0387279510ff082a
+#contents
+  h1 Sample File
+  img src="http://livedoor.blogimg.jp/niccorin/imgs/3/3/3354b61c.jpg" alt="yterajima"
+  p テキストテキストテキスト
+  / |以降にある文字列、インデントされた文字列はすべてテキストとして扱われます。
+  p
+    | テキストテキストテキスト
+      テキストテキストテキスト
+
+

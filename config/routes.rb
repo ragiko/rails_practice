@@ -58,8 +58,9 @@ BookAdmin::Application.routes.draw do
   #   end
 
   # asはbooks_pathを通すため
-  get 'books/:id' => 'books#show', as: :books
+  get 'books/show/:id' => 'books#show', as: :books
   get 'books/hide/:id' => 'books#show_hide'
+  get 'books/slim/' => 'books#slim'
 
   resources :publishers
   resources :publishers do

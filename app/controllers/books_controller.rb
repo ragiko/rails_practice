@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destory]
+  # before_action :set_book, only: [:show, :edit, :update, :destory]
   
   def show
     @book = Book.find(params[:id])
@@ -15,9 +15,12 @@ class BooksController < ApplicationController
   def show_hide
     redirect_to books_path, status: 302
   end
-  
-  private
-  def set_book
-    @book = Book.find(params[:id])
+
+  def slim
   end
+
+  private
+  # def set_book
+  #   @book = Book.find(params[:id])
+  # end
 end
