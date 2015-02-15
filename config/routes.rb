@@ -1,4 +1,7 @@
 BookAdmin::Application.routes.draw do
+  get "profile/show"
+  get "profile/edit"
+  get "profile/update"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -68,4 +71,10 @@ BookAdmin::Application.routes.draw do
       get 'search'
     end
   end
+
+  # 単数系
+  # 一覧のindexが作られない
+  # :idによる絞り込みが無い
+  # %i{a b} to [:a, :b]
+  resource :profile, only: %i{show edit update}
 end
