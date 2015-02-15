@@ -3,11 +3,17 @@ class BooksController < ApplicationController
   
   def show
     @book = Book.find(params[:id])
+    # render :show
     respond_to do |format|
       format.html
       format.csv
-      format.json
+      format.xml { render xml: @book }
+      # format.json
     end
+  end
+  
+  def show_hide
+    redirect_to books_path, status: 302
   end
   
   private

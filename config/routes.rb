@@ -57,10 +57,14 @@ BookAdmin::Application.routes.draw do
   #     resources :products
   #   end
 
-  get 'books/:id' => 'book#show'
+  # asはbooks_pathを通すため
+  get 'books/:id' => 'books#show', as: :books
+  get 'books/hide/:id' => 'books#show_hide'
+
   resources :publishers
-  
   resources :publishers do
+    resources :books
+    
     # publisherの個別のリソースに対してアクションを指定
     member do
       get 'detail'
