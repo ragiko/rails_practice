@@ -56,4 +56,16 @@ BookAdmin::Application.routes.draw do
 
   get 'books/:id' => 'book#show'
   resources :publishers
+  
+  resources :publishers do
+    # publisherの個別のリソースに対してアクションを指定
+    member do
+      get 'detail'
+    end
+    
+    # publisherの全体のリソースに対してアクションを指定
+    collection do
+      get 'search'
+    end
+  end
 end
