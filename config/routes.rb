@@ -55,4 +55,5 @@ BookAdmin::Application.routes.draw do
   #   end
 
   get 'books/:id' => 'book#show'
+  resources :publishers
 end
