@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     # render :show
     respond_to do |format|
-      format.html
+      format.html { render layout: "awesome_book" }
       format.csv
       format.xml { render xml: @book }
       # format.json
